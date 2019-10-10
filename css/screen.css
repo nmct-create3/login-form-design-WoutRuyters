@@ -19,6 +19,32 @@
 \*------------------------------------*/
 
 :root {
+	--global-color-alpha-light: #4f95ff;
+	--global-color-alpha: #3385ff;
+	--global-color-alpha-x-dark: #3385ff4d;
+	--global-color-alpha-dark: #2e77e6;
+	--global-color-delta: #20223a;
+	--global-color-bg: #f5f6fa;
+	--global-color-beta: #ffffff;
+	--global-color-gamma: LightGrey;
+	--global-color-epsilon: #1b4186;
+	--global-color-beta-dark: #e2e3e7;
+	--global-color-gamma-dark: #606274;
+	--global-color-gamma-xxx-dark: #000000;
+	--global-color-gamma-light: Silver;
+	--global-color-miauw: #999999;
+
+	/* calc */
+	--global-baseline: 8px;
+	--global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+	--global-whitespace-xs: calc(var(--global-whitespace) /4); /* = 6px */
+	--global-whitespace-sm: calc(var(--global-whitespace) /2); /* = 12px */
+	--global-whitespace-md: calc(var(--global-baseline) *2); /* = 16px */
+	--global-whitespace-lg: 32px; /* = 32px */   
+	--global-whitespace-xl: calc(var(--global-whitespace) * 2); /* = 48px */
+	--global-whitespace-xxl: calc(var(--global-whitespace) * 3); /* = 72px */
+	--global-whitespace-xxxl: calc(var(--global-whitespace) *4); /* = 96px */
+
 }
 
 /* CSS variables here */
@@ -37,11 +63,11 @@ html {
 	font-size: 16px;
 	line-height: 1.5;
 	font-family: 'Inter Web', arial, sans-serif;
-	color: #20223a;
+	color: var(--global-color-delta);
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: #f5f6fa;
+	background-color: var(--global-color-bg);
 }
 
 *,
@@ -58,14 +84,14 @@ html {
 */
 
 ::-moz-selection {
-	background: #3385ff;
-	color: White;
+	background: var(--global-color-alpha);
+	color: var(--global-color-beta);
 	text-shadow: none;
 }
 
 ::selection {
-	background: #3385ff;
-	color: White;
+	background: var(--global-color-alpha);
+	color: var(--global-color-beta);
 	text-shadow: none;
 }
 
@@ -99,19 +125,19 @@ h3 {
 h1 {
 	font-size: 36px;
 	line-height: 48px;
-	margin: 0 0 24px;
+	margin: 0 0 var(--global-whitespace);
 }
 
 h2 {
 	font-size: 32px;
 	line-height: 40px;
-	margin: 0 0 24px;
+	margin: 0 0 var(--global-whitespace);
 }
 
 h3 {
 	font-size: 26px;
 	line-height: 32px;
-	margin: 0 0 24px;
+	margin: 0 0 var(--global-whitespace);
 }
 
 h4,
@@ -119,7 +145,7 @@ h5,
 h6 {
 	font-size: 20px;
 	line-height: 24px;
-	margin: 0 0 24px;
+	margin: 0 0 var(--global-whitespace);
 }
 
 p,
@@ -129,12 +155,12 @@ dl,
 table,
 address,
 figure {
-	margin: 0 0 24px;
+	margin: 0 0 var(--global-whitespace);
 }
 
 ul,
 ol {
-	padding-left: 24px;
+	padding-left: var(--global-whitespace);
 }
 
 li ul,
@@ -146,7 +172,7 @@ blockquote {
 	font-style: normal;
 	font-size: 23px;
 	line-height: 32px;
-	margin: 0 0 24px;
+	margin: 0 0 var(--global-whitespace);
 }
 
 blockquote * {
@@ -158,29 +184,29 @@ figcaption {
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 16px;
-	margin-top: 8px;
+	margin-top: var(--global-baseline);
 }
 
 hr {
 	border: 0;
 	height: 1px;
-	background: LightGrey;
-	margin: 0 0 24px;
+	background: var(--global-color-gamma);
+	margin: 0 0 var(--global-whitespace);
 }
 
 a {
-	color: #3385ff;
+	color: var(--global-color-alpha);
 	transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active {
-	color: #4f95ff;
+	color: var(--global-color-alpha);
 }
 
 a:hover,
 a:focus {
-	color: #2e77e6;
+	color: var(--global-color-alpha-light);
 }
 
 label,
@@ -199,7 +225,7 @@ input {
 
 .o-row {
 	position: relative;
-	padding: 24px 24px 0;
+	padding: var(--global-whitespace) var(--global-whitespace) 0;
 }
 
 .o-row--login {
@@ -212,26 +238,26 @@ input {
 /* size modifiers */
 
 .o-row--lg {
-	padding-top: 48px;
-	padding-bottom: 24px;
+	padding-top: var(--global-whitespace-xl);
+	padding-bottom: var(--global-whitespace);
 }
 
 .o-row--xl {
-	padding-top: 72px;
-	padding-bottom: 48px;
+	padding-top: var(--global-whitespace-xxl);
+	padding-bottom: var(--global-whitespace-xl);
 }
 
 @media (min-width: 768px) {
 	.o-row {
-		padding-left: 48px;
-		padding-right: 48px;
+		padding-left: var(--global-whitespace-xl);
+		padding-right: var(--global-whitespace-xl);
 	}
 }
 
 @media (min-width: 992px) {
 	.o-row--xl {
-		padding-top: 96px;
-		padding-bottom: 72px;
+		padding-top: var(--global-whitespace-xxxl);
+		padding-bottom: var(--global-whitespace-xxl);
 	}
 }
 
@@ -259,19 +285,19 @@ input {
 }
 
 .o-section + .o-section {
-	padding-top: 24px;
+	padding-top: var(--global-whitespace);
 }
 
 @media (min-width: 768px) {
 	.o-section--lg + .o-section--lg,
 	.o-section--xl + .o-section--xl {
-		padding-top: 48px;
+		padding-top: var(--global-whitespace-xl);
 	}
 }
 
 @media (min-width: 992px) {
 	.o-section--xl + .o-section--xl {
-		padding-top: 72px;
+		padding-top: var(--global-whitespace-xxl);
 	}
 }
 
@@ -297,35 +323,35 @@ input {
 /* gutter modifiers, these affect o-layout__item too */
 
 .o-layout--gutter {
-	margin: 0 -12px;
+	margin: 0 calc(var(--global-whitespace-sm)*-1);
 }
 
 .o-layout--gutter > .o-layout__item {
-	padding: 0 12px;
+	padding: 0 var(--global-whitespace-sm);
 }
 
 .o-layout--gutter-sm {
-	margin: 0 -6px;
+	margin: 0 calc(var(--global-whitespace-xs)*-1);
 }
 
 .o-layout--gutter-sm > .o-layout__item {
-	padding: 0 6px;
+	padding: 0 var(--global-whitespace-xs);
 }
 
 .o-layout--gutter-lg {
-	margin: 0 -24px;
+	margin: 0 calc(var(--global-whitespace)*-1);
 }
 
 .o-layout--gutter-lg > .o-layout__item {
-	padding: 0 24px;
+	padding: 0 var(--global-whitespace);
 }
 
 .o-layout--gutter-xl {
-	margin: 0 -48px;
+	margin: 0 calc(var(--global-whitespace-xl)*-1);
 }
 
 .o-layout--gutter-xl > .o-layout__item {
-	padding: 0 48px;
+	padding: 0 var(--global-whitespace-xl);
 }
 
 /* reverse horizontal row modifier */
@@ -453,7 +479,7 @@ input {
 	height: 24px;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 48px;
+	margin-bottom: var(--global-whitespace-xl);
 }
 
 .c-logo__symbol {
@@ -462,15 +488,15 @@ input {
 }
 
 .c-logo__path--1 {
-	fill: #20223a;
+	fill: var(--global-color-delta);
 }
 
 .c-logo__path--2 {
-	fill: #3385ff;
+	fill: var(--global-color-alpha);
 }
 
 .c-logo__path--3 {
-	fill: #1b4186;
+	fill: var(--global-color-epsilon);
 }
 /*
     Component: Card
@@ -501,9 +527,9 @@ input {
 	font-size: 16px;
 	line-height: 24px;
 
-	padding: 11px 16px; /* verticaal */
+	padding: calc(var(--global-baseline)+3) var(--global-whitespace-md); /* verticaal */
 
-	border: 1px solid #e2e3e7;
+	border: 1px solid var(--global-color-beta-dark);
 	border-radius: 4px;
 
 	appearance: none;
@@ -512,9 +538,9 @@ input {
 
 .c-input:focus {
 	outline: none;
-	border-color: #3385ff;
+	border-color: var(--global-color-alpha);
 	box-shadow: h-offset v-offset blur spread color;
-	box-shadow: 0 0 0 3px #3385ff4d;
+	box-shadow: 0 0 0 3px var(--global-color-alpha-x-dark);
 }
 
 /*
@@ -526,13 +552,13 @@ input {
 .c-label {
 	font-size: 14px;
 	line-height: 16px;
-	margin-bottom: 8px;
-	color: #606274;
+	margin-bottom: var(--global-baseline);
+	color: var(--global-color-gamma-dark);
 }
 
 .c-label--option {
 	margin-bottom: 0;
-	margin-left: 8px;
+	margin-left: var(--global-baseline);
 }
 
 .c-password {
@@ -557,29 +583,29 @@ input {
 	text-align: center;
 	font-size: 16px;
 	line-height: 24px;
-	color: #fff;
+	color: var(--global-color-beta);
 	font-weight: 600;
 
-	border: 1px solid #2e77e6;
+	border: 1px solid var(--global-color-alpha-dark);
 
 	border-radius: 3px;
-	background: #3385ff;
+	background: var(--global-color-alpha);
 
 	outline: none;
 	transition: all 0.1s ease-out;
 }
 
 .c-button:hover {
-	background-color: #4f95ff;
+	background-color: var(--global-color-alpha-light);
 }
 
 .c-button:focus {
-	background-color: #3385ff;
-	box-shadow: 0 0 0 3px #3385ff4d;
+	background-color: var(--global-color-alpha);
+	box-shadow: 0 0 0 3px var(--global-color-alpha-x-dark);
 }
 
 .c-button:active {
-	background-color: #2277e6;
+	background-color: var(--global-color-alpha-dark);
 	box-shadow: none;
 }
 
@@ -587,9 +613,9 @@ input {
 }
 
 .c-card {
-	background-color: white;
+	background-color: var(--global-color-beta);
 	border-radius: 3px;
-	border: 1px solid #e2e3e7;
+	border: 1px solid var(--global-color-beta-dark);
 	box-shadow: 0 2px 4px;
 }
 
@@ -602,14 +628,14 @@ input {
 	text-align: center;
 	line-height: 24px;
 	font-size: 18px;
-	padding-top: 48px;
-	padding-bottom: 24px;
+	padding-top: var(--global-whitespace-xl);
+	padding-bottom: var(--global-whitespace);
 }
 
 .c-card__footer {
-	padding: 24px;
+	padding: var(--global-whitespace);
 	text-align: center;
-	border-top: 1px solid #e2e3e7;
+	border-top: 1px solid var(--global-color-beta-dark);
 	width: 100%;
 }
 
@@ -624,11 +650,11 @@ input {
 */
 
 .u-color-neutral-base {
-	color: Silver;
+	color: var(--global-color-gamma-light);
 }
 
 .u-color-neutral-dark {
-	color: Black;
+	color: var(--global-color-gamma-xxx-dark);
 }
 
 /*
@@ -957,7 +983,7 @@ No media query since this is the default in mobile first design
 	*:before,
 	*:after {
 		background: transparent !important;
-		color: #000 !important;
+		color: var(--global-color-gamma-xxx-dark) !important;
 		/* Black prints faster:
         http://www.sanbeiji.com/archives/953 */
 		box-shadow: none !important;
@@ -986,7 +1012,7 @@ No media query since this is the default in mobile first design
 	}
 	pre,
 	blockquote {
-		border: 1px solid #999;
+		border: 1px solid var(--global-color-miauw);
 		page-break-inside: avoid;
 	}
 	/*
